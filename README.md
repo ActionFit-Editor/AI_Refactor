@@ -9,10 +9,10 @@ This package is **Private** and has no Runtime assembly, gameplay framework, aut
 ```json
 {
   "dependencies": {
-    "com.actionfit.custompackagemanager": "https://github.com/ActionFit-Editor/Custom_Package_Manager.git#1.1.91",
+    "com.actionfit.custompackagemanager": "https://github.com/ActionFit-Editor/Custom_Package_Manager.git#1.1.96",
     "com.actionfit.referencebinding": "https://github.com/ActionFit-Editor/ReferenceBinding.git#0.1.1",
-    "com.actionfit.ai-codeconvention": "https://github.com/ActionFitGames/AI_Code_Convention.git#0.4.0",
-    "com.actionfit.ai-refactor": "https://github.com/ActionFit-Editor/AI_Refactor.git#0.1.0"
+    "com.actionfit.ai-codeconvention": "https://github.com/ActionFitGames/AI_Code_Convention.git#0.4.1",
+    "com.actionfit.ai-refactor": "https://github.com/ActionFitGames/AI_Refactor.git#0.1.1"
   }
 }
 ```
@@ -36,7 +36,7 @@ The workflow does not edit source, assets, scenes, prefabs, ScriptableObjects, s
 ## AI Guide
 
 - Read `AI_GUIDE.md` before modifying or diagnosing this package in a consuming project.
-- AI Code Convention `0.4.0` owns the stable `AFCC-*` meanings. AI Refactor consumes those rules and owns only inventory and proposal orchestration.
+- AI Code Convention `0.4.1` owns the stable `AFCC-*` meanings. AI Refactor consumes those rules and owns only inventory and proposal orchestration.
 
 ## Assembly
 

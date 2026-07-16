@@ -20,13 +20,5 @@ MonoBehaviour:
   _status: candidate
   _description: Read-only project architecture analysis and evidence-backed refactoring
     proposals based on AI Code Convention.
-  _releaseNote: "- AI Code Convention `0.4.0`\uC744 \uAE30\uC900\uC73C\uB85C \uD504\uB85C\uC81D\uD2B8
-    \uAD6C\uC870\uB97C \uBD84\uC11D\uD558\uB294 read-only \uC6CC\uD06C\uD50C\uB85C\uB97C
-    \uCD94\uAC00\uD588\uC2B5\uB2C8\uB2E4.\n- `$refactor-plan`\uC774 ownership DAG,
-    \uD328\uD0A4\uC9C0 \uD6C4\uBCF4, port/adapter, \uB2E8\uACC4\uBCC4 \uB9C8\uC774\uADF8\uB808\uC774\uC158
-    \uACC4\uD68D\uC744 \uADFC\uAC70\uC640 \uD568\uAED8 \uC81C\uC548\uD569\uB2C8\uB2E4.\n-
-    deterministic inventory\uAC00 C# \uD6C4\uBCF4 \uC2E0\uD638\uC640 asmdef/package
-    \uC758\uC874 \uBC0F cycle\uC744 \uBCF4\uACE0\uD558\uB3C4\uB85D \uAD6C\uC131\uD588\uC2B5\uB2C8\uB2E4.\n-
-    \uC2E4\uC81C \uCF54\uB4DC\xB7\uC5D0\uC14B \uC218\uC815, repository \uC0DD\uC131,
-    package publish\uB294 \uC218\uD589\uD558\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4."
-  _dependenciesOverride: com.actionfit.ai-codeconvention@0.4.0;com.actionfit.custompackagemanager@1.1.91
+  _releaseNote: "- 내부 ActionFit 패키지 의존성을 검증된 최신 태그로 갱신했습니다.\n- 패키지 버전, 설치 예시, AI 가이드와 카탈로그 메타데이터를 함께 맞췄습니다.\n- 기존 런타임 API와 프로젝트 소유 설정은 변경하지 않았습니다."
+  _dependenciesOverride: com.actionfit.ai-codeconvention@0.4.1;com.actionfit.custompackagemanager@1.1.96

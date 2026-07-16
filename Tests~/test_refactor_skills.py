@@ -45,7 +45,7 @@ class RefactorSkillTests(unittest.TestCase):
         for agent in ("Codex", "Claude"):
             help_skill = self._read_skill(agent, "refactor-help")
             self.assertIn("`PACKAGE_SKILLS.md`", help_skill)
-            self.assertIn("com.actionfit.ai-codeconvention@0.4.0", help_skill)
+            self.assertIn("com.actionfit.ai-codeconvention@0.4.1", help_skill)
             self.assertIn("candidate inventory", help_skill)
             self.assertIn("not automatic violations", help_skill)
             self.assertIn("never edits source, assets, scenes", help_skill)
@@ -111,11 +111,11 @@ class RefactorSkillTests(unittest.TestCase):
 
     def test_package_metadata_is_private_editor_only_and_dependency_pinned(self) -> None:
         package = json.loads((PACKAGE_ROOT / "package.json").read_text(encoding="utf-8"))
-        self.assertEqual("0.1.0", package["version"])
+        self.assertEqual("0.1.1", package["version"])
         self.assertEqual(
             {
-                "com.actionfit.ai-codeconvention": "0.4.0",
-                "com.actionfit.custompackagemanager": "1.1.91",
+                "com.actionfit.ai-codeconvention": "0.4.1",
+                "com.actionfit.custompackagemanager": "1.1.96",
             },
             package["dependencies"],
         )
@@ -130,8 +130,8 @@ class RefactorSkillTests(unittest.TestCase):
             PACKAGE_ROOT / "Editor" / "PackageInfo" / "ActionFitPackageInfo_SO.asset"
         ).read_text(encoding="utf-8")
         self.assertIn("_repositoryVisibility: 1", package_info)
-        self.assertIn("com.actionfit.ai-codeconvention@0.4.0", package_info)
-        self.assertIn("com.actionfit.custompackagemanager@1.1.91", package_info)
+        self.assertIn("com.actionfit.ai-codeconvention@0.4.1", package_info)
+        self.assertIn("com.actionfit.custompackagemanager@1.1.96", package_info)
 
     def test_docs_and_metadata_have_no_placeholders_or_machine_paths(self) -> None:
         paths = [
