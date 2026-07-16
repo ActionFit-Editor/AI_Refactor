@@ -1,0 +1,24 @@
+---
+name: refactor-plan
+description: Audit a Unity repository against the effective AI Code Convention and propose an evidence-backed staged package refactoring plan without changing files. Use when the user requests a detailed project-wide or scoped architecture refactoring proposal, target ownership tree, package candidates, or port and adapter boundaries.
+---
+
+# Plan Project Refactoring
+
+Keep the entire workflow read-only. Do not edit, generate, move, or delete repository files; invoke write-capable Unity commands; install or refresh packages or skills; change Jira, Git refs, branches, worktrees, or index state; create repositories; publish; or deploy. A proposal never authorizes implementation.
+
+1. Resolve the exact repository or worktree requested by the user. Capture `git status --short --untracked-files=all` as the byte-for-byte baseline and preserve every pre-existing change.
+2. Read applicable `AGENTS.md`, `CLAUDE.md`, primary project router, directory-scoped instructions, factual architecture, package workflow, validation, and safety guidance. Keep the user's requested analysis scope explicit.
+3. Resolve AI Code Convention from `Packages/com.actionfit.ai-codeconvention`; otherwise use exactly one `Library/PackageCache/com.actionfit.ai-codeconvention@*` without editing it. Read its `AI_GUIDE.md`, `references/unity-code-authoring-rules.md`, exact `AI Code Convention profile: <id>` selector, selected profile reference, and `references/owner-routing.md`. Use `portable-core` only when the selector is absent; report duplicate or unknown selectors instead of guessing.
+4. Resolve every installed API-owner guide required by observed concrete APIs. The effective AI Code Convention and installed owner guide own rule meanings and factual API surfaces; this skill never invents an API or broadens `AFCC-*` rules.
+5. Read `references/refactor-analysis-contract.md`. Use its statuses, evidence requirements, target-tree notation, package candidate fields, output sections, and confidence rules.
+6. Run `scripts/refactor_inventory.py --root <repository-root> --format json` from this installed skill. Treat every result as a discovery candidate. Do not redirect output into the repository or use a tool that writes caches there.
+7. Inspect each material candidate directly before making a claim. Cite repository-relative `path:line`, identify the observed owner, state and lifetime, dependency direction, consumers, and concrete project or SDK coupling. Use `Violation` only when direct evidence conflicts with one cited effective `AFCC-*` rule. Otherwise use `Observed`, `Candidate`, `Missing evidence`, or `Deferred`.
+8. Build the current ownership/dependency graph and an `AFCC-TRE-001` target tree-oriented DAG. Identify composition roots, coherent feature and service nodes, shared nodes with multiple consumers, dependency edges, cycles, and project-only bindings. Do not equate the target with a Unity Transform tree, inheritance tree, folder tree, single root, or one instance per displayed node.
+9. Evaluate package candidates through `AFCC-PKG-001`: project-neutral rules/state/lifecycle, one-way dependencies, excluded project types/scenes/assets/save keys/SDKs, reuse evidence, and whether engine/UI/adapter separation is genuinely warranted. Package count is not a goal.
+10. Evaluate ports and adapters through `AFCC-PRT-001` and `AFCC-INT-001`. Require a real external production capability, keep the port consumer-oriented and narrow, bind project adapters at a composition root, and reject speculative interfaces, test-only seams, DI containers, service locators, and unsafe no-op defaults.
+11. Return these sections in order: `Scope and convention`, `Current findings`, `Current ownership graph`, `Target tree-oriented DAG`, `Package candidates`, `Ports and project adapters`, `Ordered phases`, `Migration and compatibility risks`, `Validation plan`, `Confidence and missing evidence`, and `Deferred or out of scope`. Every material finding and proposal maps to evidence and applicable `AFCC-*` IDs.
+12. Make phases independently reviewable and reversible. Include compatibility seams, serialized/public API/save/asset implications, negative tests, rollback points, and what must be separately authorized. Never describe source movement, asset migration, publishing, or project-wide replacement as already approved.
+13. Capture the same Git status command after analysis and compare it byte-for-byte with the baseline. If durable repository state changed, identify the paths, mark the no-write contract failed, and stop without presenting the proposal as complete.
+
+Report inventory/tool limitations and unverified runtime behavior. Do not claim full source compliance, successful compilation, gameplay correctness, or package readiness without separate evidence.

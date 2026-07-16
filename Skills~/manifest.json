@@ -1,0 +1,25 @@
+{
+    "schemaVersion": 2,
+    "skillPrefix": "refactor",
+    "helpSkill": "refactor-help",
+    "skills": [
+        {
+            "name": "refactor-help",
+            "agents": [
+                "codex",
+                "claude"
+            ],
+            "includeShared": false,
+            "access": "read-only"
+        },
+        {
+            "name": "refactor-plan",
+            "agents": [
+                "codex",
+                "claude"
+            ],
+            "includeShared": true,
+            "access": "read-only"
+        }
+    ]
+}

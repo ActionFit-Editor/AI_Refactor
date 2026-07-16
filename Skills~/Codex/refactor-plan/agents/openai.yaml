@@ -1,0 +1,4 @@
+interface:
+  display_name: "Plan Project Refactoring"
+  short_description: "Audit architecture and propose package refactoring"
+  default_prompt: "Use $refactor-plan to audit this Unity project against AI Code Convention and propose a staged package refactoring plan."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI Refactor Help"
+  short_description: "Explain AI Refactor workflows and safety boundaries"
+  default_prompt: "Use $refactor-help to explain AI Refactor outputs, dependencies, and read-only safety boundaries."
