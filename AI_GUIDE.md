@@ -8,14 +8,14 @@ This file is the package-local authority for AI Refactor's read-only inventory a
 - Display name: AI Refactor
 - Repository: `https://github.com/ActionFit-Editor/AI_Refactor.git`
 - Repository visibility: Public
-- Current package version at generation time: `0.1.2`
+- Current package version at generation time: `0.2.0`
 - Unity version: `6000.2`
-- AI Code Convention dependency: published `0.4.2`
-- Custom Package Manager dependency: published `1.1.97`
+- AI Code Convention dependency: candidate `0.4.4`
+- Custom Package Manager dependency: candidate `1.1.100`
 
 ## Purpose And Boundary
 
-Use this package when a user explicitly asks for a project-wide or scoped architecture audit and a staged refactoring proposal. It inventories candidate source signals and dependency edges, resolves the consuming repository's effective AI Code Convention profile and installed API-owner guides, verifies evidence directly, and proposes a progressive tree-oriented ownership DAG whose coherent reusable nodes can become packages with narrow project-bound ports.
+Use this package when a user explicitly asks for a project-wide or scoped architecture audit and a staged refactoring proposal. It inventories candidate source signals and dependency edges, resolves the consuming repository's effective AI Code Convention profile and installed API-owner guides, recognizes an explicit package-owned product composition root, verifies evidence directly, and proposes a progressive tree-oriented ownership DAG whose coherent reusable nodes can become packages with narrow project-bound ports.
 
 This package owns no gameplay state, Runtime assembly, framework, automated fix, source analyzer verdict, migration executor, Jira workflow, Git workflow, package publisher, repository creator, or global skill installer. It never edits source, assets, scenes, prefabs, ScriptableObjects, ProjectSettings, manifests, installed skills, Git state, or external systems. A proposal is evidence for a later decision; it never creates implementation authority.
 
@@ -23,21 +23,25 @@ This package owns no gameplay state, Runtime assembly, framework, automated fix,
 
 - Resolve `com.actionfit.ai-codeconvention` from the embedded `Packages/` directory or exactly one PackageCache installation.
 - Read its `AI_GUIDE.md`, shared authoring reference, exact profile selector, selected profile reference, owner routing, and relevant installed owner guides before classifying findings.
-- AI Code Convention owns `AFCC-TRE-001`, `AFCC-PKG-001`, `AFCC-PRT-001`, `AFCC-INT-001`, and every other stable rule meaning. Do not restate a broader or incompatible meaning here.
+- AI Code Convention owns `AFCC-TRE-001`, `AFCC-PKG-001`, `AFCC-PCR-001`, `AFCC-PRT-001`, `AFCC-INT-001`, and every other stable rule meaning. Do not restate a broader or incompatible meaning here.
+- A package-owned product marker selects only the package-oriented composition target. Resolve the exact profile selector separately, and never infer the target from package presence, repository identity, dependency names, folders, or source style.
 - The desired architecture is a tree-oriented ownership view backed by an acyclic DAG. Shared services can have multiple consumers. It is not a strict Transform hierarchy, inheritance tree, package-count target, DI-container mandate, or whole-project rewrite.
 
 ## Analysis Contract
 
-`Skills~/Shared/references/refactor-analysis-contract.md` defines evidence statuses, path-and-line citation, target-tree notation, package candidate fields, phase planning, confidence, missing evidence, and the final output schema. Candidate inventory signals are never violations by themselves. The skill must inspect the relevant source and map a finding to an effective `AFCC-*` rule before using `Violation`.
+`Skills~/Shared/references/refactor-analysis-contract.md` defines evidence statuses, path-and-line citation, product composition and project-shell classifications, target-tree notation, package candidate fields, phase planning, confidence, missing evidence, and the final output schema. Candidate inventory signals are never violations by themselves. The skill must inspect the relevant source and map a finding to an effective `AFCC-*` rule before using `Violation`.
 
 ## Read-Only Inventory
 
-`Skills~/Shared/scripts/refactor_inventory.py` is a deterministic Python standard-library inventory. It scans `Assets` and `Packages`, ignores Git/worktree and Unity-generated directories, redacts string literals from candidate snippets, and reports:
+`Skills~/Shared/scripts/refactor_inventory.py` is a deterministic Python standard-library inventory. It scans candidate source under `Assets` and embedded `Packages`, resolves active PackageCache roots through `Packages/packages-lock.json`, exact registry/builtin versions, and Unity's read-only `Library/PackageManager/ProjectCache` provenance for other cached sources without scanning cached C# candidate source, recognizes external `source: local` lock records without traversing their roots, ignores orphan, stale, or ambiguous cache copies, Git/worktree and unrelated Unity-generated directories, redacts string literals, unsafe dependency values, and invalid marker values, and reports:
 
 - C# candidate signals such as scene-wide discovery, lifecycle polling, detached async, coroutines, persistence, communication hubs, serialization, dynamic loading, and concrete SDK coupling;
-- asmdef names, references, known edges, unresolved references, and cycles;
-- immediate embedded package metadata, dependency edges, and cycles;
+- asmdef names, references, known edges, unresolved references, and cycles, including active cached package assemblies and UTF-8 JSON files with or without a BOM;
+- installed embedded and PackageCache package metadata, embedded-over-cache resolution, dependency edges, and cycles;
+- schema v2 `productComposition` status, exact visible package-guide marker evidence outside Markdown fenced code, indented code, and HTML comments, structural diagnostics, and a selected root only when one resolved declaration is valid;
 - deterministic counts and repository-relative paths.
+
+An external `source: local` record is valid package-lock syntax but remains outside the authorized scan roots. The inventory therefore reports `unscanned-local-package` and keeps product composition `invalid` until uniqueness can be proven without silently traversing that external path. Invalid, cyclic, or otherwise unresolvable `file:` references become bounded lock diagnostics rather than exceptions or leaked paths.
 
 The tool writes nothing and emits JSON or text only to standard output. Its result is a bounded discovery aid, not source-compliance proof.
 
@@ -68,8 +72,8 @@ Read this guide when:
 ## Agent Skills
 
 - `Skills~/manifest.json` registers schema v2 read-only `refactor-help` and `refactor-plan` for Codex and Claude with prefix `refactor`.
-- `refactor-help` reads generated `PACKAGE_SKILLS.md`, README, and this guide and explains dependencies, outputs, invocation, menu, and safety without changing state.
-- `refactor-plan` proves the exact repository and baseline Git state, resolves the effective convention and owner guides, runs the read-only inventory, inspects direct evidence, emits the required staged proposal, and compares final Git state byte-for-byte.
+- `refactor-help` reads generated `PACKAGE_SKILLS.md`, README, and this guide and explains dependencies, product-composition status, outputs, invocation, menu, and safety without changing state.
+- `refactor-plan` proves the exact repository and baseline Git state, resolves the effective convention and owner guides, runs the read-only inventory, verifies a valid product declaration without selecting the profile, inspects direct evidence, emits the required staged proposal, and compares final Git state byte-for-byte.
 - Custom Package Manager installs project-local copies and preserves unknown, modified, file-backed, linked, or conflicting targets. Do not author `PACKAGE_SKILLS.md` inside package skill sources.
 
 ## Routing And Validation
@@ -92,7 +96,7 @@ Read this guide when:
 
 ## Release And Distribution Boundary
 
-- This `0.1.2` candidate targets the Public `ActionFit-Editor/AI_Refactor` repository under the package owner's distribution authorization.
+- This `0.2.0` candidate targets the Public `ActionFit-Editor/AI_Refactor` repository under the package owner's distribution authorization.
 - Public visibility does not permit credentials, tokens, private keys, or machine-specific configuration in the package and does not grant rights beyond explicit repository license terms.
 - Publishing is manual through Custom Package Manager and requires separate authorization.
 - Before reusing a version, check remote Git tags. Published tags are immutable.

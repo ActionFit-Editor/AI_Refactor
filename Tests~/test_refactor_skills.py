@@ -45,7 +45,8 @@ class RefactorSkillTests(unittest.TestCase):
         for agent in ("Codex", "Claude"):
             help_skill = self._read_skill(agent, "refactor-help")
             self.assertIn("`PACKAGE_SKILLS.md`", help_skill)
-            self.assertIn("com.actionfit.ai-codeconvention@0.4.2", help_skill)
+            self.assertIn("com.actionfit.ai-codeconvention@0.4.4", help_skill)
+            self.assertIn("product composition declaration as `absent`, `valid`, or `invalid`", help_skill)
             self.assertIn("candidate inventory", help_skill)
             self.assertIn("not automatic violations", help_skill)
             self.assertIn("never edits source, assets, scenes", help_skill)
@@ -59,9 +60,19 @@ class RefactorSkillTests(unittest.TestCase):
             "path:line",
             "`AFCC-TRE-001`",
             "`AFCC-PKG-001`",
+            "`AFCC-PCR-001`",
             "`AFCC-PRT-001`",
             "`AFCC-INT-001`",
             "tree-oriented DAG",
+            "Product composition and project shell",
+            "AI Product Composition Root: <package-id>",
+            "AI Refactor target: package-oriented-product",
+            "embedded-before-PackageCache",
+            "`Composition`",
+            "`Product`",
+            "`Reusable`",
+            "`Project Shell`",
+            "`Exception`",
             "Package count is not a goal",
             "DI containers",
             "Ordered phases",
@@ -99,6 +110,7 @@ class RefactorSkillTests(unittest.TestCase):
             "Current ownership graph",
             "Target tree-oriented DAG",
             "Package candidates",
+            "Product composition and project shell",
             "Ports and project adapters",
             "Ordered phases",
         ):
@@ -106,16 +118,19 @@ class RefactorSkillTests(unittest.TestCase):
         self.assertIn("standard-library", (PACKAGE_ROOT / "AI_GUIDE.md").read_text(encoding="utf-8"))
         self.assertIn("EXCLUDED_PARTS", inventory)
         self.assertIn("candidateDetailsTruncated", inventory)
+        self.assertIn('"schemaVersion": 2', inventory)
+        self.assertIn('"productComposition"', inventory)
+        self.assertIn("SUPPORTED_PRODUCT_TARGET", inventory)
         self.assertNotIn("write_text", inventory)
         self.assertNotIn("write_bytes", inventory)
 
     def test_package_metadata_is_public_editor_only_and_dependency_pinned(self) -> None:
         package = json.loads((PACKAGE_ROOT / "package.json").read_text(encoding="utf-8"))
-        self.assertEqual("0.1.2", package["version"])
+        self.assertEqual("0.2.0", package["version"])
         self.assertEqual(
             {
-                "com.actionfit.ai-codeconvention": "0.4.2",
-                "com.actionfit.custompackagemanager": "1.1.97",
+                "com.actionfit.ai-codeconvention": "0.4.4",
+                "com.actionfit.custompackagemanager": "1.1.100",
             },
             package["dependencies"],
         )
@@ -130,8 +145,8 @@ class RefactorSkillTests(unittest.TestCase):
             PACKAGE_ROOT / "Editor" / "PackageInfo" / "ActionFitPackageInfo_SO.asset"
         ).read_text(encoding="utf-8")
         self.assertIn("_repositoryVisibility: 0", package_info)
-        self.assertIn("com.actionfit.ai-codeconvention@0.4.2", package_info)
-        self.assertIn("com.actionfit.custompackagemanager@1.1.97", package_info)
+        self.assertIn("com.actionfit.ai-codeconvention@0.4.4", package_info)
+        self.assertIn("com.actionfit.custompackagemanager@1.1.100", package_info)
 
     def test_docs_and_metadata_have_no_placeholders_or_machine_paths(self) -> None:
         paths = [
@@ -145,7 +160,7 @@ class RefactorSkillTests(unittest.TestCase):
         for forbidden in ("TODO", "/Users/", "/Volumes/", "...\""):
             self.assertNotIn(forbidden, combined)
         self.assertIn("Repository visibility: Public", combined)
-        self.assertIn("This `0.1.2` candidate targets the Public", combined)
+        self.assertIn("This `0.2.0` candidate targets the Public", combined)
         self.assertIn("Tools > Package > AI Refactor > README", combined)
 
     @staticmethod

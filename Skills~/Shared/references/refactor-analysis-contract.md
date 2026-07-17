@@ -30,6 +30,26 @@ Every material finding contains:
 
 Do not quote secrets, credentials, full payloads, user data, or large source blocks. Prefer a short paraphrase and the exact path and line.
 
+## Product Composition And Project Shell
+
+Read the inventory's `productComposition` result before choosing the target view. `absent` preserves the normal generic architecture analysis. `valid` identifies one explicit product composition root that must still be verified against its cited package guide, sibling manifest, resolved `Packages/packages-lock.json` entry, and source-appropriate version or Unity `ProjectCache` provenance when it comes from PackageCache. Orphan, stale, and ambiguous cached copies are not installed roots, a malformed lock is missing evidence, and marker-looking text inside Markdown fenced, indented-code, or HTML-comment regions is not a declaration. An external `source: local` package is not traversed by the default read-only inventory, so `unscanned-local-package` prevents uniqueness from being claimed even when one scanned declaration exists. `invalid` is missing evidence or a structural diagnostic; do not select one declaration, infer intent, or treat installation as an opt-in.
+
+The product marker does not select an AI Code Convention profile. Resolve the primary-router profile separately, and apply `AFCC-PCR-001` only when it is effective. A valid declaration is routing evidence, not proof that package extraction, runtime ownership, project-shell reduction, or migration has happened and not authority to perform those changes.
+
+In the required `Product composition and project shell` section, keep package manifest edges, asmdef edges, and directly evidenced runtime ownership edges distinct. Report cycles, unresolved edges, package-to-project reverse dependencies, `Assets` composition candidates, compatibility facts that must remain local, and any edge that cannot be proved. Inventory paths or dependency names alone can produce only `Observed`, `Candidate`, or `Missing evidence`.
+
+Use these node classifications only when evidence supports them:
+
+| Classification | Meaning |
+| --- | --- |
+| `Composition` | The explicitly declared product composition root and its evidenced concrete binding responsibility. |
+| `Product` | A product-owned, non-reusable package or node below that root. |
+| `Reusable` | A project-neutral package or node supported by `AFCC-PKG-001` evidence. |
+| `Project Shell` | Consuming-project entry wiring or residue that remains under `Assets` or project settings. |
+| `Exception` | A deliberately local safety, workflow, current-state, compatibility, migration, secret, or environment fact with a stated owner. |
+
+Classification is separate from evidence status. Do not classify every discovered package automatically, and do not call a structural declaration diagnostic a `Violation` unless direct evidence conflicts with an effective convention rule.
+
 ## Current And Target Graphs
 
 Represent current facts as directed edges:
@@ -80,15 +100,16 @@ Do not imply authorization for source moves, asset writes, assembly changes, rep
 Return these sections in order:
 
 1. `Scope and convention`
-2. `Current findings`
-3. `Current ownership graph`
-4. `Target tree-oriented DAG`
-5. `Package candidates`
-6. `Ports and project adapters`
-7. `Ordered phases`
-8. `Migration and compatibility risks`
-9. `Validation plan`
-10. `Confidence and missing evidence`
-11. `Deferred or out of scope`
+2. `Product composition and project shell`
+3. `Current findings`
+4. `Current ownership graph`
+5. `Target tree-oriented DAG`
+6. `Package candidates`
+7. `Ports and project adapters`
+8. `Ordered phases`
+9. `Migration and compatibility risks`
+10. `Validation plan`
+11. `Confidence and missing evidence`
+12. `Deferred or out of scope`
 
 End with the no-write Git-status comparison. Separate confirmed evidence from inference and never claim source-wide compliance, compilation, runtime correctness, or package readiness without proof.

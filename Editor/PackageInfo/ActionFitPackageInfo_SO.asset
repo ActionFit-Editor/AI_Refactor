@@ -18,7 +18,31 @@ MonoBehaviour:
   _repositoryVisibility: 0
   _owner: ActionFit
   _status: candidate
-  _description: Read-only project architecture analysis and evidence-backed refactoring
-    proposals based on AI Code Convention.
-  _releaseNote: "- 저장소 대상을 Public `ActionFit-Editor/AI_Refactor`로 전환해 별도 Private 접근 권한 없이 읽기 전용 리팩터링 스킬을 설치할 수 있도록 준비했습니다.\n- AI Code Convention `0.4.2`와 Custom Package Manager `1.1.97` 의존성으로 갱신해 공개 저장소 URL과 Public-default 정책을 사용합니다.\n- README와 AI 가이드의 설치 URL, visibility, 버전 정보를 `0.1.2` 공개 배포 후보와 일치시켰습니다.\n- 기존 읽기 전용 분석 계약, Editor assembly와 프로젝트 무변경 보장은 유지했습니다."
-  _dependenciesOverride: com.actionfit.ai-codeconvention@0.4.2;com.actionfit.custompackagemanager@1.1.97
+  _description: Read-only project architecture and product-composition analysis with
+    evidence-backed refactoring proposals.
+  _releaseNote: "- \uC81C\uD488 \uD328\uD0A4\uC9C0\uC758 `Package Identity`\uC5D0
+    \uC120\uC5B8\uB41C \uAD6C\uC131 \uB8E8\uD2B8\uB97C embedded \uC6B0\uC120\uC21C\uC704,
+    `Packages/packages-lock.json`, source\uBCC4 version\uACFC Unity `ProjectCache`
+    \uADFC\uAC70\uB85C \uD0D0\uC0C9\uD558\uACE0 `absent`, `valid`, `invalid` \uC0C1\uD0DC\uC640
+    \uAD6C\uC870 \uC9C4\uB2E8\uC744 \uC81C\uACF5\uD558\uB294 schema v2 inventory\uB97C
+    \uCD94\uAC00\uD588\uC2B5\uB2C8\uB2E4.\n- \uACE0\uC544\xB7stale\xB7\uC911\uBCF5
+    PackageCache \uBCF5\uC0AC\uBCF8\uACFC Markdown fenced/indented code \uB610\uB294
+    HTML comment \uC548\uC758 \uC608\uC2DC marker\uB97C \uC81C\uD488 \uB8E8\uD2B8\uB85C
+    \uC120\uD0DD\uD558\uC9C0 \uC54A\uB3C4\uB85D \uBCF4\uAC15\uD588\uC2B5\uB2C8\uB2E4.\n-
+    local-tarball\uC740 \uC804\uCCB4 \uC815\uADDC\uD654 \uACBD\uB85C\uB85C \uAC80\uC99D\uD558\uACE0
+    \uC678\uBD80 `source: local` \uB808\uCF54\uB4DC\uB294 \uC800\uC7A5\uC18C \uBC16
+    \uC18C\uC2A4\uB97C \uD0D0\uC0C9\uD558\uC9C0 \uC54A\uB294 \uB300\uC2E0 \uC81C\uD488
+    \uB8E8\uD2B8 \uC720\uC77C\uC131\uC744 \uBBF8\uD655\uC778 \uC9C4\uB2E8\uC73C\uB85C
+    \uCC98\uB9AC\uD558\uBA70, \uBE44\uC815\uC0C1\xB7\uC21C\uD658 `file:` \uACBD\uB85C\uB294
+    \uC608\uC678 \uC5C6\uC774 \uCC28\uB2E8\uD569\uB2C8\uB2E4.\n- \uC81C\uD488 \uAD6C\uC131,
+    \uD504\uB85C\uC81D\uD2B8 \uC178, package.json, asmdef, \uC9C1\uC811 \uD655\uC778\uD55C
+    \uB7F0\uD0C0\uC784 \uC18C\uC720\uAD8C\uC744 \uAD6C\uBD84\uD574 \uBCF4\uACE0\uD558\uACE0
+    \uADFC\uAC70\uC5D0 \uB530\uB77C `Composition`, `Product`, `Reusable`, `Project
+    Shell`, `Exception`\uC73C\uB85C \uBD84\uB958\uD558\uB3C4\uB85D \uBD84\uC11D \uACC4\uC57D\uC744
+    \uD655\uC7A5\uD588\uC2B5\uB2C8\uB2E4.\n- UTF-8 BOM\uC774 \uD3EC\uD568\uB41C \uAE30\uC874
+    package.json\uACFC asmdef\uB3C4 \uC815\uC0C1\uC801\uC73C\uB85C \uBD84\uC11D\uD558\uB3C4\uB85D
+    \uD638\uD658\uC131\uC744 \uBCF4\uC644\uD588\uC2B5\uB2C8\uB2E4.\n- AI Code Convention
+    `0.4.4`\uC640 Custom Package Manager `1.1.100` \uC758\uC874\uC131\uC73C\uB85C
+    \uAC31\uC2E0\uD558\uACE0 \uC77D\uAE30 \uC804\uC6A9\xB7\uBB34\uBCC0\uACBD \uAC80\uC99D
+    \uACC4\uC57D\uC744 \uC720\uC9C0\uD588\uC2B5\uB2C8\uB2E4."
+  _dependenciesOverride: com.actionfit.ai-codeconvention@0.4.4;com.actionfit.custompackagemanager@1.1.100
