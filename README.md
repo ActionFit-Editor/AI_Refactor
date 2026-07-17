@@ -2,17 +2,17 @@
 
 Read-only Unity project architecture inventory and evidence-backed staged refactoring proposals based on AI Code Convention. The package helps describe a current ownership graph, a tree-oriented target DAG, coherent package candidates, and the narrow ports and project adapters needed to connect them.
 
-This package is **Private** and has no Runtime assembly, gameplay framework, automatic refactoring engine, asset migration, or publishing workflow. It never applies a proposal.
+This package is distributed from a **Public** repository and has no Runtime assembly, gameplay framework, automatic refactoring engine, asset migration, or publishing workflow. It never applies a proposal. Public visibility makes the source readable but does not embed credentials or grant rights beyond the repository's explicit license terms.
 
 ## Install
 
 ```json
 {
   "dependencies": {
-    "com.actionfit.custompackagemanager": "https://github.com/ActionFit-Editor/Custom_Package_Manager.git#1.1.96",
+    "com.actionfit.custompackagemanager": "https://github.com/ActionFit-Editor/Custom_Package_Manager.git#1.1.97",
     "com.actionfit.referencebinding": "https://github.com/ActionFit-Editor/ReferenceBinding.git#0.1.1",
-    "com.actionfit.ai-codeconvention": "https://github.com/ActionFitGames/AI_Code_Convention.git#0.4.1",
-    "com.actionfit.ai-refactor": "https://github.com/ActionFitGames/AI_Refactor.git#0.1.1"
+    "com.actionfit.ai-codeconvention": "https://github.com/ActionFit-Editor/AI_Code_Convention.git#0.4.2",
+    "com.actionfit.ai-refactor": "https://github.com/ActionFit-Editor/AI_Refactor.git#0.1.2"
   }
 }
 ```
@@ -36,7 +36,7 @@ The workflow does not edit source, assets, scenes, prefabs, ScriptableObjects, s
 ## AI Guide
 
 - Read `AI_GUIDE.md` before modifying or diagnosing this package in a consuming project.
-- AI Code Convention `0.4.1` owns the stable `AFCC-*` meanings. AI Refactor consumes those rules and owns only inventory and proposal orchestration.
+- AI Code Convention `0.4.2` owns the stable `AFCC-*` meanings. AI Refactor consumes those rules and owns only inventory and proposal orchestration.
 
 ## Assembly
 

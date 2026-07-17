@@ -1,12 +1,12 @@
 {
   "name": "com.actionfit.ai-refactor",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "displayName": "AI Refactor",
   "description": "Read-only project architecture analysis and evidence-backed refactoring proposals based on AI Code Convention.",
   "unity": "6000.2",
   "author": { "name": "ActionFit" },
   "dependencies": {
-    "com.actionfit.ai-codeconvention": "0.4.1",
-    "com.actionfit.custompackagemanager": "1.1.96"
+    "com.actionfit.ai-codeconvention": "0.4.2",
+    "com.actionfit.custompackagemanager": "1.1.97"
   }
 }

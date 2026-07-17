@@ -15,10 +15,10 @@ MonoBehaviour:
   _packageId: com.actionfit.ai-refactor
   _displayName: AI Refactor
   _repoName: AI_Refactor
-  _repositoryVisibility: 1
+  _repositoryVisibility: 0
   _owner: ActionFit
   _status: candidate
   _description: Read-only project architecture analysis and evidence-backed refactoring
     proposals based on AI Code Convention.
-  _releaseNote: "- 내부 ActionFit 패키지 의존성을 검증된 최신 태그로 갱신했습니다.\n- 패키지 버전, 설치 예시, AI 가이드와 카탈로그 메타데이터를 함께 맞췄습니다.\n- 기존 런타임 API와 프로젝트 소유 설정은 변경하지 않았습니다."
-  _dependenciesOverride: com.actionfit.ai-codeconvention@0.4.1;com.actionfit.custompackagemanager@1.1.96
+  _releaseNote: "- 저장소 대상을 Public `ActionFit-Editor/AI_Refactor`로 전환해 별도 Private 접근 권한 없이 읽기 전용 리팩터링 스킬을 설치할 수 있도록 준비했습니다.\n- AI Code Convention `0.4.2`와 Custom Package Manager `1.1.97` 의존성으로 갱신해 공개 저장소 URL과 Public-default 정책을 사용합니다.\n- README와 AI 가이드의 설치 URL, visibility, 버전 정보를 `0.1.2` 공개 배포 후보와 일치시켰습니다.\n- 기존 읽기 전용 분석 계약, Editor assembly와 프로젝트 무변경 보장은 유지했습니다."
+  _dependenciesOverride: com.actionfit.ai-codeconvention@0.4.2;com.actionfit.custompackagemanager@1.1.97
