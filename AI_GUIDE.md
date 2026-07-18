@@ -8,7 +8,7 @@ This file is the package-local authority for AI Refactor's read-only inventory a
 - Display name: AI Refactor
 - Repository: `https://github.com/ActionFit-Editor/AI_Refactor.git`
 - Repository visibility: Public
-- Current package version at generation time: `0.2.1`
+- Current package version at generation time: `0.2.4`
 - Unity version: `6000.2`
 - AI Code Convention dependency: candidate `0.4.4`
 - Custom Package Manager dependency: candidate `1.1.100`
