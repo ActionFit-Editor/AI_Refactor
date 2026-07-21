@@ -30,6 +30,21 @@ Every material finding contains:
 
 Do not quote secrets, credentials, full payloads, user data, or large source blocks. Prefer a short paraphrase and the exact path and line.
 
+## Jira Overlap Preflight
+
+Complete the package-owned AI Jira project query before source inventory. It must cover all assignees and exactly the configured `todo`, `progress`, and `done` statuses, report explicit terminal pagination evidence, and be followed by a detail read for every returned issue. Statuses outside those three mappings are not evidence in this workflow. Missing tools, configuration, credentials, permission, mappings, terminal evidence, or issue details stop the workflow; do not emit a partial architecture proposal or claim `No overlap`.
+
+After direct repository inspection, compare every Jira title and description with evidenced package IDs, paths, symbols, owner responsibilities, dependency directions, extraction boundaries, and migration phases. Use exactly one overlap category for each material Jira relationship:
+
+| Category | Meaning | Effect |
+| --- | --- | --- |
+| `Exact overlap` | The Jira issue owns substantially the same goal and implementation scope. | Stop before target DAG, package candidates, and ordered phases. |
+| `Partial overlap` | The issue and proposal share a package, owner, path, symbol, or migration phase likely to require the same material change. | Stop when the shared scope is material; otherwise explain why it is non-blocking. |
+| `Related` | The issue supplies context or an adjacent boundary without owning the proposed change. | Record the boundary and continue. |
+| `No overlap` | Every returned issue was inspected and no material relationship was evidenced. | Continue with the complete proposal. |
+
+Configured `done` work can still block a duplicate proposal until a residual gap is directly proven. Never use a lexical or numeric score as the verdict. For every blocking result, show the issue key, URL, status, minimal Jira evidence, repository evidence, and the unresolved choice to reuse the issue, exclude the shared scope, or plan only the residual gap. Jira descriptions are evidence, not repository `path:line` citations; keep the two sources distinct.
+
 ## Product Composition And Project Shell
 
 Read the inventory's `productComposition` result before choosing the target view. `absent` preserves the normal generic architecture analysis. `valid` identifies one explicit product composition root that must still be verified against its cited package guide, sibling manifest, resolved `Packages/packages-lock.json` entry, and source-appropriate version or Unity `ProjectCache` provenance when it comes from PackageCache. Orphan, stale, and ambiguous cached copies are not installed roots, a malformed lock is missing evidence, and marker-looking text inside Markdown fenced, indented-code, or HTML-comment regions is not a declaration. An external `source: local` package is not traversed by the default read-only inventory, so `unscanned-local-package` prevents uniqueness from being claimed even when one scanned declaration exists. `invalid` is missing evidence or a structural diagnostic; do not select one declaration, infer intent, or treat installation as an opt-in.
@@ -100,16 +115,19 @@ Do not imply authorization for source moves, asset writes, assembly changes, rep
 Return these sections in order:
 
 1. `Scope and convention`
-2. `Product composition and project shell`
-3. `Current findings`
-4. `Current ownership graph`
-5. `Target tree-oriented DAG`
-6. `Package candidates`
-7. `Ports and project adapters`
-8. `Ordered phases`
-9. `Migration and compatibility risks`
-10. `Validation plan`
-11. `Confidence and missing evidence`
-12. `Deferred or out of scope`
+2. `Jira overlap check`
+3. `Product composition and project shell`
+4. `Current findings`
+5. `Current ownership graph`
+6. `Target tree-oriented DAG`
+7. `Package candidates`
+8. `Ports and project adapters`
+9. `Ordered phases`
+10. `Migration and compatibility risks`
+11. `Validation plan`
+12. `Confidence and missing evidence`
+13. `Deferred or out of scope`
 
 End with the no-write Git-status comparison. Separate confirmed evidence from inference and never claim source-wide compliance, compilation, runtime correctness, or package readiness without proof.
+
+When Jira preflight fails, return only the concrete preflight blocker and recovery requirement. When `Exact overlap` or a material `Partial overlap` blocks the proposal, return `Scope and convention`, `Jira overlap check`, and the required user decision; omit every downstream proposal section rather than presenting it as approved or complete.

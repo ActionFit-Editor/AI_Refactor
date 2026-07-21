@@ -8,16 +8,17 @@ This file is the package-local authority for AI Refactor's read-only inventory a
 - Display name: AI Refactor
 - Repository: `https://github.com/ActionFit-Editor/AI_Refactor.git`
 - Repository visibility: Public
-- Current package version at generation time: `0.2.4`
+- Current package version at generation time: `0.2.5`
 - Unity version: `6000.2`
-- AI Code Convention dependency: candidate `0.4.4`
-- Custom Package Manager dependency: candidate `1.1.100`
+- AI Code Convention dependency: `0.4.8`
+- AI Jira dependency: `1.0.28`
+- Custom Package Manager dependency: `1.1.106`
 
 ## Purpose And Boundary
 
 Use this package when a user explicitly asks for a project-wide or scoped architecture audit and a staged refactoring proposal. It inventories candidate source signals and dependency edges, resolves the consuming repository's effective AI Code Convention profile and installed API-owner guides, recognizes an explicit package-owned product composition root, verifies evidence directly, and proposes a progressive tree-oriented ownership DAG whose coherent reusable nodes can become packages with narrow project-bound ports.
 
-This package owns no gameplay state, Runtime assembly, framework, automated fix, source analyzer verdict, migration executor, Jira workflow, Git workflow, package publisher, repository creator, or global skill installer. It never edits source, assets, scenes, prefabs, ScriptableObjects, ProjectSettings, manifests, installed skills, Git state, or external systems. A proposal is evidence for a later decision; it never creates implementation authority.
+This package owns no gameplay state, Runtime assembly, framework, automated fix, source analyzer verdict, migration executor, Jira transport or write workflow, Git workflow, package publisher, repository creator, or global skill installer. It consumes only AI Jira's project-wide overlap and issue-detail reads and never changes Jira. It never edits source, assets, scenes, prefabs, ScriptableObjects, ProjectSettings, manifests, installed skills, Git state, or external systems. A proposal is evidence for a later decision; it never creates implementation authority.
 
 ## Convention Dependency
 
@@ -30,6 +31,14 @@ This package owns no gameplay state, Runtime assembly, framework, automated fix,
 ## Analysis Contract
 
 `Skills~/Shared/references/refactor-analysis-contract.md` defines evidence statuses, path-and-line citation, product composition and project-shell classifications, target-tree notation, package candidate fields, phase planning, confidence, missing evidence, and the final output schema. Candidate inventory signals are never violations by themselves. The skill must inspect the relevant source and map a finding to an effective `AFCC-*` rule before using `Violation`.
+
+## Jira Overlap Dependency
+
+- Resolve `com.actionfit.ai-jira` from the embedded `Packages/` directory or the active PackageCache installation through `Skills~/Shared/scripts/ai_refactor_jira_cli.py`.
+- Before source inventory, call AI Jira's dedicated `overlap` read command. Require the configured project, all assignees, exactly the mapped `todo`, `progress`, and `done` statuses, and explicit complete pagination.
+- Read every returned issue detail. Missing package tools, config, credentials, permissions, any status mapping, terminal pagination evidence, or issue detail stops the entire analysis; never fall back to assigned unresolved work-list results or a partial proposal.
+- AI Jira owns REST, JQL, authentication handling, pagination, and detail retrieval. AI Refactor owns direct repository comparison and the semantic `Exact overlap`, `Partial overlap`, `Related`, or `No overlap` classification.
+- An `Exact overlap` or material `Partial overlap`, including configured done work, blocks target DAG, package candidates, and phases until the user chooses to reuse the existing issue, exclude the shared scope, or plan only a directly evidenced residual gap. Do not replace this judgment with a numeric similarity score.
 
 ## Read-Only Inventory
 
@@ -72,14 +81,14 @@ Read this guide when:
 ## Agent Skills
 
 - `Skills~/manifest.json` registers schema v2 read-only `refactor-help` and `refactor-plan` for Codex and Claude with prefix `refactor`.
-- `refactor-help` reads generated `PACKAGE_SKILLS.md`, README, and this guide and explains dependencies, product-composition status, outputs, invocation, menu, and safety without changing state.
-- `refactor-plan` proves the exact repository and baseline Git state, resolves the effective convention and owner guides, runs the read-only inventory, verifies a valid product declaration without selecting the profile, inspects direct evidence, emits the required staged proposal, and compares final Git state byte-for-byte.
+- `refactor-help` reads generated `PACKAGE_SKILLS.md`, README, and this guide and explains dependencies, Jira overlap preflight, product-composition status, outputs, invocation, menu, and safety without changing state.
+- `refactor-plan` proves the exact repository and baseline Git state, completes the strict read-only Jira overlap preflight, resolves the effective convention and owner guides, runs the read-only inventory only when unblocked, verifies a valid product declaration without selecting the profile, inspects direct evidence, emits the required staged proposal, and compares final Git state byte-for-byte.
 - Custom Package Manager installs project-local copies and preserves unknown, modified, file-backed, linked, or conflicting targets. Do not author `PACKAGE_SKILLS.md` inside package skill sources.
 
 ## Routing And Validation
 
 - Use `$code-convention-help` for convention explanation, `$code-convention-check` for documented-contract comparison and retirement readiness, and `$code-convention-apply` only after a concrete implementation has separate edit authority.
-- Use `$refactor-plan` for source-backed architecture inventory and a no-write staged proposal. Do not route it to Jira, PR, publication, or implementation operations.
+- Use `$refactor-plan` for source-backed architecture inventory and a no-write staged proposal. Its Jira access is limited to the required AI Jira overlap and detail reads; do not route it to Jira writes, task pickup, PR, publication, or implementation operations.
 - Run `Tests~/run-tests.sh` for inventory determinism, no-write behavior, metadata, shared resources, skill parity, and safety contracts.
 - Run Custom Package Manager contract validation and Unity compilation after package metadata, Editor menu, asmdef, or guide-router changes.
 
@@ -96,7 +105,7 @@ Read this guide when:
 
 ## Release And Distribution Boundary
 
-- This `0.2.0` candidate targets the Public `ActionFit-Editor/AI_Refactor` repository under the package owner's distribution authorization.
+- This `0.2.5` candidate targets the Public `ActionFit-Editor/AI_Refactor` repository under the package owner's distribution authorization.
 - Public visibility does not permit credentials, tokens, private keys, or machine-specific configuration in the package and does not grant rights beyond explicit repository license terms.
 - Publishing is manual through Custom Package Manager and requires separate authorization.
 - Before reusing a version, check remote Git tags. Published tags are immutable.

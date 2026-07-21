@@ -45,7 +45,11 @@ class RefactorSkillTests(unittest.TestCase):
         for agent in ("Codex", "Claude"):
             help_skill = self._read_skill(agent, "refactor-help")
             self.assertIn("`PACKAGE_SKILLS.md`", help_skill)
-            self.assertIn("com.actionfit.ai-codeconvention@0.4.4", help_skill)
+            self.assertIn("com.actionfit.ai-codeconvention@0.4.8", help_skill)
+            self.assertIn("com.actionfit.ai-jira@1.0.28", help_skill)
+            self.assertIn("all assignees", help_skill)
+            self.assertIn("`Exact overlap`", help_skill)
+            self.assertIn("never substitutes a numeric similarity score", help_skill)
             self.assertIn("product composition declaration as `absent`, `valid`, or `invalid`", help_skill)
             self.assertIn("candidate inventory", help_skill)
             self.assertIn("not automatic violations", help_skill)
@@ -81,6 +85,15 @@ class RefactorSkillTests(unittest.TestCase):
             "byte-for-byte",
             "no-write contract failed",
             "A proposal never authorizes implementation",
+            "scripts/ai_refactor_jira_cli.py overlap --format json",
+            "exact `states=[todo, progress, done]`",
+            "every returned key",
+            "`Exact overlap`",
+            "`Partial overlap`",
+            "`Related`",
+            "`No overlap`",
+            "including configured `done` work",
+            "Do not use an automatic numeric score",
         )
         for agent in ("Codex", "Claude"):
             plan = self._read_skill(agent, "refactor-plan")
@@ -126,11 +139,12 @@ class RefactorSkillTests(unittest.TestCase):
 
     def test_package_metadata_is_public_editor_only_and_dependency_pinned(self) -> None:
         package = json.loads((PACKAGE_ROOT / "package.json").read_text(encoding="utf-8"))
-        self.assertEqual("0.2.0", package["version"])
+        self.assertEqual("0.2.5", package["version"])
         self.assertEqual(
             {
-                "com.actionfit.ai-codeconvention": "0.4.4",
-                "com.actionfit.custompackagemanager": "1.1.100",
+                "com.actionfit.ai-codeconvention": "0.4.8",
+                "com.actionfit.ai-jira": "1.0.28",
+                "com.actionfit.custompackagemanager": "1.1.106",
             },
             package["dependencies"],
         )
@@ -145,8 +159,9 @@ class RefactorSkillTests(unittest.TestCase):
             PACKAGE_ROOT / "Editor" / "PackageInfo" / "ActionFitPackageInfo_SO.asset"
         ).read_text(encoding="utf-8")
         self.assertIn("_repositoryVisibility: 0", package_info)
-        self.assertIn("com.actionfit.ai-codeconvention@0.4.4", package_info)
-        self.assertIn("com.actionfit.custompackagemanager@1.1.100", package_info)
+        self.assertIn("com.actionfit.ai-codeconvention@0.4.8", package_info)
+        self.assertIn("com.actionfit.ai-jira@1.0.28", package_info)
+        self.assertIn("com.actionfit.custompackagemanager@1.1.106", package_info)
 
     def test_docs_and_metadata_have_no_placeholders_or_machine_paths(self) -> None:
         paths = [
@@ -160,7 +175,7 @@ class RefactorSkillTests(unittest.TestCase):
         for forbidden in ("TODO", "/Users/", "/Volumes/", "...\""):
             self.assertNotIn(forbidden, combined)
         self.assertIn("Repository visibility: Public", combined)
-        self.assertIn("This `0.2.0` candidate targets the Public", combined)
+        self.assertIn("This `0.2.5` candidate targets the Public", combined)
         self.assertIn("Tools > Package > AI Refactor > README", combined)
 
     @staticmethod
