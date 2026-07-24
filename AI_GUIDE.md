@@ -8,9 +8,9 @@ This file is the package-local authority for AI Refactor's read-only inventory a
 - Display name: AI Refactor
 - Repository: `https://github.com/ActionFit-Editor/AI_Refactor.git`
 - Repository visibility: Public
-- Current package version at generation time: `0.2.5`
+- Current package version at generation time: `0.2.6`
 - Unity version: `6000.2`
-- AI Code Convention dependency: `0.4.8`
+- AI Code Convention dependency: `0.5.2`
 - AI Jira dependency: `1.0.28`
 - Custom Package Manager dependency: `1.1.106`
 
@@ -105,7 +105,7 @@ Read this guide when:
 
 ## Release And Distribution Boundary
 
-- This `0.2.5` candidate targets the Public `ActionFit-Editor/AI_Refactor` repository under the package owner's distribution authorization.
+- This `0.2.6` candidate targets the Public `ActionFit-Editor/AI_Refactor` repository under the package owner's distribution authorization.
 - Public visibility does not permit credentials, tokens, private keys, or machine-specific configuration in the package and does not grant rights beyond explicit repository license terms.
 - Publishing is manual through Custom Package Manager and requires separate authorization.
 - Before reusing a version, check remote Git tags. Published tags are immutable.

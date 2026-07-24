@@ -10,10 +10,10 @@ AI Code Convention을 기준으로 Unity 프로젝트 아키텍처를 읽기 전
 {
   "dependencies": {
     "com.actionfit.custompackagemanager": "https://github.com/ActionFit-Editor/Custom_Package_Manager.git#1.1.106",
-    "com.actionfit.referencebinding": "https://github.com/ActionFit-Editor/ReferenceBinding.git#0.1.2",
-    "com.actionfit.ai-codeconvention": "https://github.com/ActionFit-Editor/AI_Code_Convention.git#0.4.8",
+    "com.actionfit.referencebinding": "https://github.com/ActionFit-Editor/ReferenceBinding.git#0.2.2",
+    "com.actionfit.ai-codeconvention": "https://github.com/ActionFit-Editor/AI_Code_Convention.git#0.5.2",
     "com.actionfit.ai-jira": "https://github.com/ActionFit-Editor/AI_Jira.git#1.0.28",
-    "com.actionfit.ai-refactor": "https://github.com/ActionFit-Editor/AI_Refactor.git#0.2.5"
+    "com.actionfit.ai-refactor": "https://github.com/ActionFit-Editor/AI_Refactor.git#0.2.6"
   }
 }
 ```
@@ -41,7 +41,7 @@ Custom Package Manager는 선언된 AI Code Convention, AI Jira와 package manag
 ## AI 가이드
 
 - 사용하는 프로젝트에서 이 패키지를 변경하거나 진단하기 전에 `AI_GUIDE.md`를 읽습니다.
-- 안정적인 `AFCC-*` 의미는 AI Code Convention `0.4.8`이 소유합니다. AI Jira `1.0.28`은 Jira REST/JQL, 완전 pagination과 이슈 상세 읽기를 소유합니다. AI Refactor는 해당 증거의 의미 기반 overlap 분류, inventory 및 제안 orchestration만 소유합니다.
+- 안정적인 `AFCC-*` 의미는 AI Code Convention `0.5.2`가 소유합니다. AI Jira `1.0.28`은 Jira REST/JQL, 완전 pagination과 이슈 상세 읽기를 소유합니다. AI Refactor는 해당 증거의 의미 기반 overlap 분류, inventory 및 제안 orchestration만 소유합니다.
 
 ## 어셈블리
 

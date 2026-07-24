@@ -1,6 +1,6 @@
 {
   "name": "com.actionfit.ai-refactor",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "displayName": "AI Refactor",
   "description": "Read-only project architecture and product-composition analysis with evidence-backed refactoring proposals.",
   "unity": "6000.2",
@@ -8,7 +8,7 @@
     "name": "ActionFit"
   },
   "dependencies": {
-    "com.actionfit.ai-codeconvention": "0.4.8",
+    "com.actionfit.ai-codeconvention": "0.5.2",
     "com.actionfit.ai-jira": "1.0.28",
     "com.actionfit.custompackagemanager": "1.1.106"
   }

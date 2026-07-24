@@ -45,7 +45,7 @@ class RefactorSkillTests(unittest.TestCase):
         for agent in ("Codex", "Claude"):
             help_skill = self._read_skill(agent, "refactor-help")
             self.assertIn("`PACKAGE_SKILLS.md`", help_skill)
-            self.assertIn("com.actionfit.ai-codeconvention@0.4.8", help_skill)
+            self.assertIn("com.actionfit.ai-codeconvention@0.5.2", help_skill)
             self.assertIn("com.actionfit.ai-jira@1.0.28", help_skill)
             self.assertIn("all assignees", help_skill)
             self.assertIn("`Exact overlap`", help_skill)
@@ -139,10 +139,10 @@ class RefactorSkillTests(unittest.TestCase):
 
     def test_package_metadata_is_public_editor_only_and_dependency_pinned(self) -> None:
         package = json.loads((PACKAGE_ROOT / "package.json").read_text(encoding="utf-8"))
-        self.assertEqual("0.2.5", package["version"])
+        self.assertEqual("0.2.6", package["version"])
         self.assertEqual(
             {
-                "com.actionfit.ai-codeconvention": "0.4.8",
+                "com.actionfit.ai-codeconvention": "0.5.2",
                 "com.actionfit.ai-jira": "1.0.28",
                 "com.actionfit.custompackagemanager": "1.1.106",
             },
@@ -159,7 +159,7 @@ class RefactorSkillTests(unittest.TestCase):
             PACKAGE_ROOT / "Editor" / "PackageInfo" / "ActionFitPackageInfo_SO.asset"
         ).read_text(encoding="utf-8")
         self.assertIn("_repositoryVisibility: 0", package_info)
-        self.assertIn("com.actionfit.ai-codeconvention@0.4.8", package_info)
+        self.assertIn("com.actionfit.ai-codeconvention@0.5.2", package_info)
         self.assertIn("com.actionfit.ai-jira@1.0.28", package_info)
         self.assertIn("com.actionfit.custompackagemanager@1.1.106", package_info)
 
@@ -175,7 +175,7 @@ class RefactorSkillTests(unittest.TestCase):
         for forbidden in ("TODO", "/Users/", "/Volumes/", "...\""):
             self.assertNotIn(forbidden, combined)
         self.assertIn("Repository visibility: Public", combined)
-        self.assertIn("This `0.2.5` candidate targets the Public", combined)
+        self.assertIn("This `0.2.6` candidate targets the Public", combined)
         self.assertIn("Tools > Package > AI Refactor > README", combined)
 
     @staticmethod

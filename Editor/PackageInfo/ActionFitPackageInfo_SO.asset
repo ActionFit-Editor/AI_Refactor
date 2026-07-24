@@ -20,13 +20,8 @@ MonoBehaviour:
   _status: candidate
   _description: Read-only project architecture and product-composition analysis with
     evidence-backed refactoring proposals.
-  _releaseNote: "- AI Jira\uC758 \uD504\uB85C\uC81D\uD2B8 \uC804\uCCB4 todo, progress,
-    done \uC77D\uAE30 \uC804\uC6A9 \uC911\uBCF5 \uAC80\uC0AC\uB97C \uB9AC\uD329\uD130\uB9C1
-    \uACC4\uD68D \uC120\uD589 \uC870\uAC74\uC73C\uB85C \uCD94\uAC00\uD588\uC2B5\uB2C8\uB2E4.\n-
-    Exact overlap\uACFC \uC911\uC694\uD55C Partial overlap\uC740 \uC644\uB8CC \uC791\uC5C5\uC744
-    \uD3EC\uD568\uD574 \uD6C4\uC18D \uC81C\uC548\uC744 \uC911\uB2E8\uD558\uB3C4\uB85D
-    \uD588\uC2B5\uB2C8\uB2E4.\n- Jira \uC870\uD68C \uC2E4\uD328\uB098 \uBD88\uC644\uC804\uD55C
-    pagination\uC5D0\uC11C \uC804\uCCB4 \uBD84\uC11D\uC744 \uC548\uC804\uD558\uAC8C
-    \uC911\uB2E8\uD558\uB3C4\uB85D \uD588\uC2B5\uB2C8\uB2E4.\n- AI Jira 1.0.28 \uC758\uC874\uC131\uACFC
-    Codex/Claude \uC2A4\uD0AC, \uBB38\uC11C, \uD14C\uC2A4\uD2B8\uB97C \uAC31\uC2E0\uD588\uC2B5\uB2C8\uB2E4."
-  _dependenciesOverride: com.actionfit.ai-codeconvention@0.4.8;com.actionfit.ai-jira@1.0.28;com.actionfit.custompackagemanager@1.1.106
+  _releaseNote: "- `com.actionfit.ai-codeconvention@0.5.2`\uC758 `AFCC-RFS-005` package-owned
+    ReferenceBinding \uACC4\uC57D\uC744 \uC0AC\uC6A9\uD558\uB3C4\uB85D \uC758\uC874\uC131\uACFC
+    \uBB38\uC11C\uB97C \uC815\uB82C\uD588\uC2B5\uB2C8\uB2E4.\n- \uC77D\uAE30 \uC804\uC6A9
+    inventory\uC640 Jira overlap \uB3D9\uC791\uC740 \uBCC0\uACBD\uD558\uC9C0 \uC54A\uC558\uC2B5\uB2C8\uB2E4."
+  _dependenciesOverride: com.actionfit.ai-codeconvention@0.5.2;com.actionfit.ai-jira@1.0.28;com.actionfit.custompackagemanager@1.1.106
